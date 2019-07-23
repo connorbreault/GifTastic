@@ -8,11 +8,15 @@
 
 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 
+$("#buttons").on("click", function(){
+    alert("works")
+})
+
 $("#gifButt").on("click", function(event) {
     
     var userSearch = $("#searchInput").val()
 
-    
+    $("#buttons").prepend("<button class='butts' id='butts'>" + userSearch + "</button>")
 
     console.log(userSearch)
 
@@ -30,8 +34,8 @@ $("#gifButt").on("click", function(event) {
         $("#gifContainer").html("")
         for(var i = 0; i < gifs.length; i++){
 
-            $("#gifContainer").prepend("<img src='"+gifs[i].images.original_still.url+"' style='height:350px; width:350px'>") 
+            $("#gifContainer").prepend("<div id='gif'>" + "<img src='"+gifs[i].images.original_still.url+"' style='height:350px; width:350px'>" + "<br>" + gifs[i].rating + "</div>") 
         }
-        $("#gifContainer").prepend(userSearch + "<hr>")
+        $("#gifContainer").prepend("<br>" + userSearch + "<hr>")
     })
 })
