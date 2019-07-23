@@ -1,12 +1,24 @@
 /* Make it sexy*/
+body{
+    background: url(../images/Background.png)
+}
 #container{
     text-align: center
 }
+#top{
+    border: #b0ba4e outset;
+    font-family: 'Rochester', cursive;
+    background: url(../images/foreground.jpg);
+    width: 30%;
+    margin: 10px auto 0px auto;
+}
 #gifContainer {
-    width: 80%;
+    width: 75%;
     margin: auto;
+    overflow: auto;
+    font-family: 'Rochester', cursive;
 }
 #gif {
     float: left;
-    padding: 0px 10px;
+    padding: 0px 10px 0px 10px;
 }

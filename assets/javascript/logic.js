@@ -8,22 +8,17 @@
 
 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 
-$("#buttons").on("click", function(){
-    alert("works")
-})
 
 $("#gifButt").on("click", function(event) {
     
+    event.preventDefault();
+    
     var userSearch = $("#searchInput").val()
-
-    $("#buttons").prepend("<button class='butts' id='butts'>" + userSearch + "</button>")
 
     console.log(userSearch)
 
-    event.preventDefault();
-
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
-    
+
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -34,8 +29,14 @@ $("#gifButt").on("click", function(event) {
         $("#gifContainer").html("")
         for(var i = 0; i < gifs.length; i++){
 
-            $("#gifContainer").prepend("<div id='gif'>" + "<img src='"+gifs[i].images.original_still.url+"' style='height:350px; width:350px'>" + "<br>" + gifs[i].rating + "</div>") 
+            $("#gifContainer").prepend("<div id='gif'>" + "<img src='"+gifs[i].images.original_still.url+"' style='height:300px; width:300px'>" + "<br>" + gifs[i].rating + "</div>") 
         }
         $("#gifContainer").prepend("<br>" + userSearch + "<hr>")
+        $("#buttons").prepend("<button class='butts' id='butts'>" + userSearch + "</button>")
+    })
+    $("#buttons").on("click", "#butts", function(){
+        var buttSearch = $(this).val()
+        console.log(buttSearch)
+        
     })
 })
