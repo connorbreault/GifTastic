@@ -12,11 +12,22 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Trivia</title>
+    <title>Gif Galore</title>
 </head>
 
 <body>
+<div id="container">
+    <h1>Gif Galore</h1>
 
+    <form id="gifForm">
+        <label for="gifInput">Search for a GIF</label>
+        <br>
+        <input type="text" id="gifInput">
+        <br><br>
+        <input id="findGif" type="submit" value="Search">
+    </form>
+    <div id="gifContainer"></div>
+</div>
 <script type="text/javascript" src="./assets/javascript/logic.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
