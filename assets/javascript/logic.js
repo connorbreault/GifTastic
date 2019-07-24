@@ -19,7 +19,7 @@ $( document ).ready(function() {
                 var gifRating = gifs[i].rating
                 var gifImg = $("<img id='gifim'>")
                 gifImg.attr("src", gifs[i].images.original_still.url)
-                gifImg.attr("state='still'")
+                gifImg.attr("state", "still")
                 var p = $("<p>").text("Rating : " + gifRating)
                 gifDiv.append(gifImg)
                 gifDiv.append("<br>")
@@ -37,7 +37,7 @@ $( document ).ready(function() {
     //-- BUTTONS CLICK --//
     $("#buttons").on("click", "#butts", function(){
         var buttonSearch = $("#butts").attr("data")
-        alert("This functionality will be fixed when I suck less :)")
+        alert("Having issues targeting the gifs path")
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + buttonSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         $.ajax({
             url: queryURL,
@@ -51,7 +51,7 @@ $( document ).ready(function() {
                 var gifRating = gifs[i].rating
                 var gifImg = $("<img id='gifim'>")
                 gifImg.attr("src", gifs[i].images.original_still.url)
-                gifImg.attr("state='still'")
+                gifImg.attr("state", "still")
                 var p = $("<p>").text("Rating : " + gifRating)
                 gifDiv.append(gifImg)
                 gifDiv.append("<br>")
@@ -67,13 +67,14 @@ $( document ).ready(function() {
     function startStop(e){
     if($(this).state === "still"){
     $(this).attr("src", gifs.images.original.url) //<-<-<- GET VAR GIFS FROM sendIt FUNCTION, SCOPE ISSUE
+    $(this).attr("state")
     } else{
     $(this).attr("src", gifs.images.original_still.url)
     }}
 
     //-- START & PAUSE CLICK -- //
     $("#gifContainer").on("click", "#gifim", function(){
-        alert("This functionality will be fixed when I suck less :)")
+        alert("Function searches your last search instead of text inside of the button :(")
         startStop()
     })
 })
