@@ -1,42 +1,79 @@
-//GIPHY BASICS
-//add html search box and button
-//set up gif ajax
-//search button function for ajax query
-//ajax queries the user input in search box
-//GIF START & STOP
+$( document ).ready(function() {
+
+//--  MAIN SEARCH FUNCTION  --//
+    $("#gifButt").on("click", function(event) {
+        //--  VARIABLE SETUP  --//
+        event.preventDefault();
+        var userSearch = $("#searchInput").val()
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
+        //--  AJAX  --//
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        //--  THEN APPEND GIFS  --//
+        }).then(function sendIt(response) {
+            var gifs = response.data
+            $("#gifContainer").html("")
+            for(var i = 0; i < gifs.length; i++){
+                var gifDiv = $("<div id='gifdiv'>")
+                var gifRating = gifs[i].rating
+                var gifImg = $("<img id='gifim'>")
+                gifImg.attr("src", gifs[i].images.original_still.url)
+                gifImg.attr("state='still'")
+                var p = $("<p>").text("Rating : " + gifRating)
+                gifDiv.append(gifImg)
+                gifDiv.append("<br>")
+                gifDiv.append(gifRating)
+                $("#gifContainer").prepend(gifDiv) 
+                }
 
 
-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        //--  CREATE BUTTON FROM SEARCH  --//
+            $("#buttons").prepend("<button id='butts'>" + userSearch + "</button>")
+            $("#butts").attr("data", userSearch) //<-<-<- TARGET THE TEXT INSIDE THE BUTTON RATHER THAN USERSEARCH
+        })})
 
 
-$("#gifButt").on("click", function(event) {
-    
-    event.preventDefault();
-    
-    var userSearch = $("#searchInput").val()
-
-    console.log(userSearch)
-
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-        console.log(response)
-
-        var gifs = response.data
-        $("#gifContainer").html("")
-        for(var i = 0; i < gifs.length; i++){
-
-            $("#gifContainer").prepend("<div id='gif'>" + "<img src='"+gifs[i].images.original_still.url+"' style='height:300px; width:300px'>" + "<br>" + gifs[i].rating + "</div>") 
-        }
-        $("#gifContainer").prepend("<br>" + userSearch + "<hr>")
-        $("#buttons").prepend("<button class='butts' id='butts'>" + userSearch + "</button>")
-    })
+    //-- BUTTONS CLICK --//
     $("#buttons").on("click", "#butts", function(){
-        var buttSearch = $(this).val()
-        console.log(buttSearch)
-        
+        var buttonSearch = $("#butts").attr("data")
+        alert("This functionality will be fixed when I suck less :)")
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + buttonSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        //--  THEN APPEND GIFS  --//
+        }).then(function sendIt(response) {
+            var gifs = response.data
+            $("#gifContainer").html("")
+            for(var i = 0; i < gifs.length; i++){
+                var gifDiv = $("<div id='gifdiv'>")
+                var gifRating = gifs[i].rating
+                var gifImg = $("<img id='gifim'>")
+                gifImg.attr("src", gifs[i].images.original_still.url)
+                gifImg.attr("state='still'")
+                var p = $("<p>").text("Rating : " + gifRating)
+                gifDiv.append(gifImg)
+                gifDiv.append("<br>")
+                gifDiv.append(gifRating)
+                $("#gifContainer").prepend(gifDiv) 
+                }
+        console.log(buttonSearch)
+        })
+    })
+
+
+    //-- START & PAUSE FUNCTION --//
+    function startStop(e){
+    if($(this).state === "still"){
+    $(this).attr("src", gifs.images.original.url) //<-<-<- GET VAR GIFS FROM sendIt FUNCTION, SCOPE ISSUE
+    } else{
+    $(this).attr("src", gifs.images.original_still.url)
+    }}
+
+    //-- START & PAUSE CLICK -- //
+    $("#gifContainer").on("click", "#gifim", function(){
+        alert("This functionality will be fixed when I suck less :)")
+        startStop()
     })
 })

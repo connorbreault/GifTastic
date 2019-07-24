@@ -13,12 +13,18 @@ body{
     margin: 10px auto 0px auto;
 }
 #gifContainer {
-    width: 75%;
+    width: 940px;
     margin: auto;
     overflow: auto;
     font-family: 'Rochester', cursive;
+    margin-bottom: 25px
 }
-#gif {
+#gifdiv {
     float: left;
+    margin: auto
+}
+#gifim {
+    height: 300px;
+    width: 300px;
     padding: 0px 10px 0px 10px;
 }
