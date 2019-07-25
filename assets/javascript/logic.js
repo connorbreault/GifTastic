@@ -43,7 +43,7 @@ var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video
     $("#buttons").on("click", "#butts", function(){
         var buttonSearch = $("#butts").attr("data")
         alert("Having issues targeting the gifs path")
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + buttonSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         $.ajax({
             url: queryURL,
             method: "GET"
