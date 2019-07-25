@@ -1,4 +1,9 @@
 $( document ).ready(function() {
+    
+var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video Games", "Memes", "Spaghetti", "Dumb"]
+    for(var j=0; j < topics.length; j++){
+    $("#buttons").append("<button id='butts'>" + topics[j] + '</button>')
+}
 
 //--  MAIN SEARCH FUNCTION  --//
     $("#gifButt").on("click", function(event) {
@@ -29,7 +34,7 @@ $( document ).ready(function() {
 
 
         //--  CREATE BUTTON FROM SEARCH  --//
-            $("#buttons").prepend("<button id='butts'>" + userSearch + "</button>")
+            $("#buttons").append("<button id='butts'>" + userSearch + "</button>")
             $("#butts").attr("data", userSearch) //<-<-<- TARGET THE TEXT INSIDE THE BUTTON RATHER THAN USERSEARCH
         })})
 
