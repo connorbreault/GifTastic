@@ -34,10 +34,29 @@ body{
     }
   }
 
+@media only screen and (max-width: 813px) {
+    #gifContainer {
+        width: auto;
+        margin: 0px 0px 0px 125px;
+    }
+  }
 @media only screen and (max-width: 769px) {
     #gifContainer {
         width: auto;
         margin: 0px 0px 0px 70px;
+    }
+  }
+
+@media only screen and (max-width: 668px) {
+  #gifContainer {
+      width: auto;
+      margin: 0px 0px 0px 30px;
+  }
+}
+@media only screen and (max-width: 569px) {
+    #gifContainer {
+        width: auto;
+        margin: 0px 0px 0px 135px
     }
   }
 
