@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     
-var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video Games", "Memes", "Spaghetti", "Dumb"]
+var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video Games", "Memes", "Charlie Murphy Laugh"]
     for(var j=0; j < topics.length; j++){
     $("#buttons").append("<button id='butts'>" + topics[j] + '</button>')
 }
@@ -10,7 +10,7 @@ var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video
         //--  VARIABLE SETUP  --//
         event.preventDefault();
         var userSearch = $("#searchInput").val()
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         //--  AJAX  --//
         $.ajax({
             url: queryURL,
@@ -79,7 +79,7 @@ var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video
 
     //-- START & PAUSE CLICK -- //
     $("#gifContainer").on("click", "#gifim", function(){
-        alert("Function searches your last search instead of text inside of the button :(")
+        alert("Having issues retargeting gif path :(")
         startStop()
     })
 })
