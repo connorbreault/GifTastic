@@ -18,7 +18,8 @@ $(document).ready(function () {
         //--  VARIABLE SETUP  --//
         event.preventDefault();
         var userSearch = $("#searchInput").val();
-        //$("#buttons").push(userSearch);
+        topics.push(userSearch);
+        $("#buttons").empty()
         renderButts()
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         //--  AJAX  --//
@@ -44,9 +45,6 @@ $(document).ready(function () {
                 gifDiv.append("Rating: " + gifRating)
                 $("#gifContainer").prepend(gifDiv)
             }
-            //--  CREATE BUTTON FROM SEARCH  --//
-            $("#buttons").append("<button class='butts' id='newbutts'>" + userSearch + "</button>")
-            $("#newbutts").attr("data", userSearch) //<-<-<- TARGET THE TEXT INSIDE THE BUTTON RATHER THAN USERSEARCH
         })
     })
 
