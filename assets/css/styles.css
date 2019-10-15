@@ -19,64 +19,45 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 #gifContainer {
-    width: 940px;
+    width: 90%;
     margin: auto;
     overflow: auto;
     font-family: 'Rochester', cursive;
-    margin-bottom: 25px
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #4b776b;
+    padding: 5px;
+    border: 2px outset #4b776b;
+}
+.instructions{
+    font-family: 'Rochester', cursive;
+    background: #b0ba4e;
+    padding: 10px;
+    border: 2px outset #4b776b;
+    margin: 25px auto 0px auto;
+    width: fit-content;
 }
 #gifdiv {
     float: left;
     margin: auto
 }
 #gifim {
-    height: 300px;
-    width: 300px;
+    height: 250px !important;
+    width: 250px !important;
     padding: 0px 10px 0px 10px;
+}
+.hidden{
+    display: none !important
+}
+.info{
+    font-family: 'Montserrat', sans-serif;
 }
 @media only screen and (max-width: 1000px) {
     #top {
-        width: auto;
+        width: 90%;
     }
-  }
-
-@media only screen and (max-width: 813px) {
-    #gifContainer {
-        width: auto;
-        margin: 0px 0px 0px 125px;
+    #gifContainer{
+        width: 90%
     }
-  }
-@media only screen and (max-width: 769px) {
-    #gifContainer {
-        width: auto;
-        margin: 0px 0px 0px 70px;
-    }
-  }
-
-@media only screen and (max-width: 668px) {
-  #gifContainer {
-      width: auto;
-      margin: 0px 0px 0px 30px;
-  }
-}
-@media only screen and (max-width: 569px) {
-    #gifContainer {
-        width: auto;
-        margin: 0px 0px 0px 135px
-    }
-  }
-
-@media only screen and (max-width: 376px) {
-    #gifContainer {
-        width: auto;
-        margin: 0px 0px 0px 33px;
-    }
-  }
-@media only screen and (max-width: 321px) {
-    #gifContainer {
-        width: auto;
-        margin: 0px 0px 0px 10px;
-    }
-  }
-
-  
+} 

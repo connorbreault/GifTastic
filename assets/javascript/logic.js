@@ -20,6 +20,8 @@ $(document).ready(function () {
         var userSearch = $("#searchInput").val();
         topics.push(userSearch);
         $("#buttons").empty()
+        $("#gifContainer").removeClass("hidden")
+        $(".instructions").removeClass("hidden")
         renderButts()
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         //--  AJAX  --//
@@ -53,6 +55,8 @@ $(document).ready(function () {
     $("#buttons").on("click", ".butts", function () {
         event.preventDefault()
         var buttonSearch = $(this).attr("data")
+        $("#gifContainer").removeClass("hidden")
+        $(".instructions").removeClass("hidden")
         //alert("Having issues targeting the button correctly :(")
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         $.ajax({
