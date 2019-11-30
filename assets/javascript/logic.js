@@ -79,7 +79,7 @@ $(document).ready(function () {
                 gifDiv.append("<br>")
                 gifDiv.append(gifRating)
                 $("#gifContainer").prepend(gifDiv)
-            } console.log("buttonSerach = " + buttonSearch)
+            }
         })
     })
 
