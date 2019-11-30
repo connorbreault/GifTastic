@@ -12,10 +12,7 @@ body{
     width: 30%;
     margin: 10px auto 0px auto;
 }
-#buttons{
-    font-family: 'Montserrat', sans-serif;
-}
-#searchButt{
+.buttons{
     font-family: 'Montserrat', sans-serif;
 }
 #gifContainer {

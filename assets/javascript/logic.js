@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //--  APPEND TOPIC BUTTONS --//
-    var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video Games", "Memes", "Charlie Murphy Laugh"]
+    var topics = ["Skateboarding", "Snowboarding", "Music", "Movies", "Dogs", "Video Games", "Memes"]
     function renderButts() {
         $("#buttons").empty()
         for (var j = 0; j < topics.length; j++) {
@@ -57,7 +57,6 @@ $(document).ready(function () {
         var buttonSearch = $(this).attr("data")
         $("#gifContainer").removeClass("hidden")
         $(".instructions").removeClass("hidden")
-        //alert("Having issues targeting the button correctly :(")
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
         $.ajax({
             url: queryURL,
@@ -86,11 +85,10 @@ $(document).ready(function () {
 
     //-- START & PAUSE CLICK -- //
     $("#gifContainer").on("click", "#gifim", function () {
-        //alert("Having issues retargeting gif path :(")
         var state = $(this).attr("state")
         console.log("state = " + state)
         if (state == "still") {
-            $(this).attr("src", $(this).attr("gifAnimated")) //<-<-<- GET VAR GIFS FROM sendIt FUNCTION, SCOPE ISSUE
+            $(this).attr("src", $(this).attr("gifAnimated"))
             $(this).attr("state", "animated")
         } else {
             $(this).attr("src", $(this).attr("gifStill"))
