@@ -10,6 +10,8 @@ A simple gif searching app, currently hosted through Github.  This app was built
   - CSS
   - Javascript
 
+## To view this website live, [click here!](https://connorbreault.github.io/GifTastic/)...
+
 # With this site, we can...
 
   - Search for gifs 
