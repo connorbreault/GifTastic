@@ -13,6 +13,7 @@ $(document).ready(function () {
     }
     renderButts()
 
+
     //--  MAIN SEARCH FUNCTION  --//
     $("#searchButt").on("click", function (event) {
         //--  VARIABLE SETUP  --//
@@ -23,7 +24,7 @@ $(document).ready(function () {
         $("#gifContainer").removeClass("hidden")
         $(".instructions").removeClass("hidden")
         renderButts()
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=NcAZq5HVV69EeVh7Dh267J8RixNGJ3zn&limit=10"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=" + config.giphy_key + "&limit=10"
         //--  AJAX  --//
         $.ajax({
             url: queryURL,
