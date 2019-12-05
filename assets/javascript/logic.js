@@ -87,7 +87,6 @@ $(document).ready(function () {
     //-- START & PAUSE CLICK -- //
     $("#gifContainer").on("click", "#gifim", function () {
         var state = $(this).attr("state")
-        console.log("state = " + state)
         if (state == "still") {
             $(this).attr("src", $(this).attr("gifAnimated"))
             $(this).attr("state", "animated")
